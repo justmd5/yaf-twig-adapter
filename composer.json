@@ -1,0 +1,25 @@
+{
+  "name": "justmd5/yaf-twig-adapter",
+  "keywords": [
+    "twig for yaf",
+    "twig for yet another framework",
+    "Yet Another Framework",
+    "yar集成twig"
+  ],
+  "authors": [
+    {
+      "name": "justmd5",
+      "email": "ding21st@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "require": {
+    "php": ">=5.3.0",
+    "twig/twig": "~v1.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "JustMd5\\": "src/"
+    }
+  }
+}
