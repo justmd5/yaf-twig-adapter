@@ -12,7 +12,7 @@ At first create `composer.json` file:
 ```json
 {
 	"require": {
-		"lovelock/php-yaf-twig": ">=1.0"
+		"justmd5/yaf-twig-adapter":">=1.0"
 	}
 }
 ```
