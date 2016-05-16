@@ -70,6 +70,59 @@ twig.cache = APP_PATH "../cache"
 twig.debug = true
 ```
 
+
+
+## 如果你的项目中存在modules则可以参考如下:
+
+```php
+<?php
+
+use \Yaf\Bootstrap_Abstract;
+use \Yaf\Dispatcher;
+use \Yaf\Application;
+use \JustMd5\TwigAdapter;
+
+class Bootstrap extends Bootstrap_Abstract
+{
+
+	/**
+	 * @param Dispatcher $dispatcher
+	 */
+	  public function _initTwig(Dispatcher $dispatcher)
+        {
+            if (REQUEST_METHOD !== 'CLI') {
+                $config = Application::app()->getConfig();
+                $modules_names = explode(',', $config->application->modules);
+                $paths = [ROOT_PATH . '/' . APP_NAME . '/views'];
+                array_walk($modules_names, function ($v) use (&$paths) {
+                    if (is_dir(ROOT_PATH . '/' . APP_NAME . '/modules/' . $v . '/views')) {
+                        array_push($paths, ROOT_PATH . '/' . APP_NAME . '/modules/' . $v . '/views');
+                    }
+                });
+                $dispatcher->setView(new Twig($paths, isset($config->twig) ? $config->twig->toArray() : []));
+            }
+
+        }
+}
+
+```
+Add to `application.ini`:
+
+```ini
+[product]
+
+;app
+;此处填写你的modules,多modules","隔开
+application.modules = "Index,Log,Demo"
+application.view.ext = twig
+
+;twig
+twig.cache = APP_PATH "../cache"
+[devel : product]
+;twig
+twig.debug = true
+```
+
 ## License
 
 MIT license

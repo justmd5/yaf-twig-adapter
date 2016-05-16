@@ -14,7 +14,7 @@ class Twig implements \Yaf\View_Interface
     protected $variables = array ();
 
     /**
-     * @param string $templateDir
+     * @param string|array $templateDir
      * @param array $options
      */
     public function __construct($templateDir, array $options = array ())
@@ -118,7 +118,7 @@ class Twig implements \Yaf\View_Interface
     }
 
     /**
-     * @param string $templateDir
+     * @param string|array $templateDir
      * @return void
      */
     public function setScriptPath($templateDir)
