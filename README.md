@@ -1,4 +1,6 @@
 # yaf-twig-adapter
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjustmd5%2Fyaf-twig-adapter.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fjustmd5%2Fyaf-twig-adapter?ref=badge_shield)
+
 
 Twig Adapter for Yaf PHP Framework with namespace enabled.
 
@@ -126,3 +128,5 @@ twig.debug = true
 ## License
 
 MIT license
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjustmd5%2Fyaf-twig-adapter.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fjustmd5%2Fyaf-twig-adapter?ref=badge_large)
